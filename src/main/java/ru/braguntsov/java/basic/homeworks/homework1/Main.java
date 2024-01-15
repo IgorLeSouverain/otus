@@ -34,10 +34,7 @@ public class Main {
         }
     }
     public void greetings() {
-        System.out.print("Hello");
-        System.out.print(" World");
-        System.out.print(" from");
-        System.out.print(" Java");
+        System.out.println("Hello World from Java");
     }
 
     public String checkSign(int a, int b, int c) {
