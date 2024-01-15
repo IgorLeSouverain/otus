@@ -2,6 +2,7 @@ package ru.braguntsov.java.basic.homeworks.homework1;
 
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Main main = new Main();
@@ -26,8 +27,8 @@ public class Main {
                 main.selectColor();
                 break;
             case 5:
-                int var4 = (int)(Math.random()*30) - 30;
                 int var5 = (int)(Math.random()*30) - 30;
+                int var4 = (int)(Math.random()*30) - 30;
                 System.out.println(main.addOrSubtractAndPrint(var4, var5, false));
                 break;
         }
