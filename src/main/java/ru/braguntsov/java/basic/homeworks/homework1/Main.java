@@ -1,4 +1,4 @@
-package ru.braguntsov.java.basic.homeworks;
+package ru.braguntsov.java.basic.homeworks.homework1;
 
 import java.util.Scanner;
 
