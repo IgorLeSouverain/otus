@@ -35,10 +35,7 @@ public class Main {
     }
 
     public void greetings() {
-        System.out.println("Hello");
-        System.out.println("World");
-        System.out.println("from");
-        System.out.println("Java");
+        System.out.println("Hello\nWorld\nfrom\nJava");
     }
 
     public String checkSign(int a, int b, int c) {
