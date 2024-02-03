@@ -22,13 +22,13 @@ public class Box {
     }
 
     public void closeBox() {
-        if (!isClosed) {
+        if (!isClosed()) {
             isClosed = true;
             System.out.println("Box is now closed");
         }
     }
     public void openBox() {
-        if (isClosed) {
+        if (isClosed()) {
             isClosed = false;
             System.out.println("Box is now open");
         }
@@ -70,7 +70,7 @@ public class Box {
     }
 
     public void setObject(Object o) throws Exception {
-        if (object == null && !isClosed) {
+        if (object == null && !isClosed()) {
             object = o;
             System.out.println("You put " + o + " inside the box");
         } else {
@@ -79,7 +79,7 @@ public class Box {
     }
 
     public void removeObject() {
-        if (object != null && !isClosed) {
+        if (object != null && !isClosed()) {
             System.out.println("You removed object from the box");
             object = null;
         } else {
