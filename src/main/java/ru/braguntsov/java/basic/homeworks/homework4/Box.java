@@ -65,6 +65,8 @@ public class Box {
         if (object != null) {
             System.out.println("You removed object from the box");
             object = null;
+        } else {
+            throw new NullPointerException("No object to remove");
         }
     }
 
