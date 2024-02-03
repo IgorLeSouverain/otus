@@ -27,25 +27,27 @@ public class Box {
             System.out.println("Box is now closed");
         }
     }
+
     public void openBox() {
         if (isClosed()) {
             isClosed = false;
             System.out.println("Box is now open");
         }
     }
+
+    public boolean hasColor() {
+        return color != null;
+    }
+
     public void setColor(String color) {
-        if (color != null) {
+        if (hasColor()) {
             this.color = color;
             System.out.println("Box color is now " + color);
         }
     }
 
     public String getColor() {
-        if (color != null) {
-            return color;
-        } else {
-            throw new NullPointerException("No color");
-        }
+        return color;
     }
 
     public int getDepth() {
@@ -60,30 +62,29 @@ public class Box {
         return width;
     }
 
-    public Object getObject() {
-        if (object != null) {
-            System.out.println("There's " + object + " inside the box");
-            return object;
-        } else {
-            throw new NullPointerException("No object");
-        }
+    public boolean hasObject() {
+        return object != null;
     }
 
-    public void setObject(Object o) throws Exception {
-        if (object == null && !isClosed()) {
+    public Object getObject() {
+        System.out.println("There's " + object + " inside the box");
+        return object;
+    }
+
+    public void setObject(Object o) {
+        if (hasObject() && !isClosed()) {
             object = o;
             System.out.println("You put " + o + " inside the box");
         } else {
-            throw new Exception("Box already has an item");
+            System.out.println("The box already has an object");
+            ;
         }
     }
 
     public void removeObject() {
-        if (object != null && !isClosed()) {
+        if (hasObject() && !isClosed()) {
             System.out.println("You removed object from the box");
             object = null;
-        } else {
-            throw new NullPointerException("No object to remove");
         }
     }
 
@@ -112,11 +113,7 @@ public class Box {
 class Main1 {
     public static void main(String[] args) {
         Box box = new Box(1, 2, 3, "Red");
-        try {
-            box.setObject(1);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        box.setObject(1);
         box.getObject();
         System.out.println(box.getInfo());
     }
