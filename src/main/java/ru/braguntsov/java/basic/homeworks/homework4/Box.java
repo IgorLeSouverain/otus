@@ -8,6 +8,7 @@ public class Box {
     private final int depth;
     private String color;
     private Object object = null;
+    private boolean isClosed = false;
 
     Box(int width, int height, int depth, String color) {
         this.width = width;
@@ -16,6 +17,22 @@ public class Box {
         this.color = color;
     }
 
+    public boolean isClosed() {
+        return isClosed;
+    }
+
+    public void closeBox() {
+        if (!isClosed) {
+            isClosed = true;
+            System.out.println("Box is now closed");
+        }
+    }
+    public void openBox() {
+        if (isClosed) {
+            isClosed = false;
+            System.out.println("Box is now open");
+        }
+    }
     public void setColor(String color) {
         if (color != null) {
             this.color = color;
@@ -53,7 +70,7 @@ public class Box {
     }
 
     public void setObject(Object o) throws Exception {
-        if (object == null) {
+        if (object == null && !isClosed) {
             object = o;
             System.out.println("You put " + o + " inside the box");
         } else {
@@ -62,7 +79,7 @@ public class Box {
     }
 
     public void removeObject() {
-        if (object != null) {
+        if (object != null && !isClosed) {
             System.out.println("You removed object from the box");
             object = null;
         } else {
