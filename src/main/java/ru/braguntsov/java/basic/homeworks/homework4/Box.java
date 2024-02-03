@@ -10,7 +10,7 @@ public class Box {
     private Object object = null;
     private boolean isClosed = false;
 
-    Box(int width, int height, int depth, String color) {
+    public Box(int width, int height, int depth, String color) {
         this.width = width;
         this.height = height;
         this.depth = depth;
@@ -21,14 +21,14 @@ public class Box {
         return isClosed;
     }
 
-    public void closeBox() {
+    public void close() {
         if (!isClosed()) {
             isClosed = true;
             System.out.println("Box is now closed");
         }
     }
 
-    public void openBox() {
+    public void open() {
         if (isClosed()) {
             isClosed = false;
             System.out.println("Box is now open");
@@ -41,17 +41,14 @@ public class Box {
     }
 
     public int getDepth() {
-        System.out.println("Box's depth is " + depth);
         return depth;
     }
 
     public int getHeight() {
-        System.out.println("Box's height is " + height);
         return height;
     }
 
     public int getWidth() {
-        System.out.println("Box's width is " + width);
         return width;
     }
 
@@ -62,9 +59,6 @@ public class Box {
     public void setObject(Object o) {
         if (!hasObject() && !isClosed()) {
             object = o;
-            System.out.println("You put " + o + " inside the box");
-        } else {
-            System.out.println("The box already has an object");
         }
     }
 
@@ -76,13 +70,6 @@ public class Box {
     }
 
     public void getInfo() {
-        HashMap<String, Object> hashMap = new HashMap<>();
-        String color = this.color;
-        int depth = this.depth;
-        int height = this.height;
-        int width = this.width;
-        Object object = this.object;
-
         System.out.println("Box's color is " + color);
         System.out.println("Box's depth is " + depth);
         System.out.println("Box's height is " + height);

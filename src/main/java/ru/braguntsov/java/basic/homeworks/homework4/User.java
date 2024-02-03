@@ -1,9 +1,9 @@
 package ru.braguntsov.java.basic.homeworks.homework4;
 
-import org.joda.time.LocalDate;
-import org.joda.time.Years;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -59,10 +59,14 @@ class Main {
                 new User("braguntsov", "zxc", "alekseevich", new GregorianCalendar(1997, Calendar.MAY, 29).getTime(), "braguntsov10gmail.com"),
                 new User("braguntsov", "aaaa", "alekseevich", new GregorianCalendar(1996, Calendar.MAY, 29).getTime(), "braguntsov10gmail.com")
         };
-        LocalDate nowDate = LocalDate.now();
+
+        int n = 0;
         for (User user : users) {
-            LocalDate userDate = LocalDate.fromDateFields(user.getDob());
-            long yearsBetween = Years.yearsBetween(userDate, nowDate).getYears();
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(users[n].getDob());
+            int year = calendar.get(Calendar.YEAR);
+            int yearsBetween = LocalDate.now().getYear() - year;
+            n++;
             if (yearsBetween > 40) {
                 System.out.println(user.getName() + " старше 40 лет");
             }
