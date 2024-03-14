@@ -29,4 +29,8 @@ public class Plate {
     public boolean hasFood() {
         return currentFood > 0;
     }
+
+    public int getCurrentFood() {
+        return currentFood;
+    }
 }

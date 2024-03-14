@@ -11,7 +11,7 @@ public class Cat {
     }
 
     public void eat(Plate plate, int foodAmount) {
-        if (plate.hasFood()) {
+        if (plate.hasFood() && plate.getCurrentFood() >= foodAmount) {
             fullness = true;
             plate.decreaseFood(foodAmount);
             System.out.println("Кот " + name + " покушал");

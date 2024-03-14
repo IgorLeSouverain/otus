@@ -10,7 +10,7 @@ public class Main {
         };
         for (Cat cat : cats) {
             cat.isFull();
-            cat.eat(plate, 1);
+            cat.eat(plate, 100);
             cat.isFull();
         }
     }
