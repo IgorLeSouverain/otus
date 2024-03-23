@@ -7,8 +7,6 @@ public class Human {
         this.name = name;
     }
 
-    
-
     public String getName() {
         return name;
     }
