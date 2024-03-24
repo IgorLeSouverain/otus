@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import static ru.braguntsov.java.basic.homeworks.homework9.Employee.*;
+
 public class Main {
     public static void main(String[] args) {
         ArrayList<Integer> integers = new ArrayList<>();
@@ -62,42 +64,6 @@ public class Main {
         }
     }
 
-    public static ArrayList<String> getEmployeesNames(ArrayList<Employee> employees) {
-        ArrayList<String> names = new ArrayList<>();
-        for (Employee employee : employees) {
-            names.add(employee.getName());
-        }
-        return names;
-    }
-
-    public static ArrayList<Employee> getEmployeesWithMinAge(ArrayList<Employee> employees, int age) {
-        ArrayList<Employee> employeeArrayList = new ArrayList<>();
-        for (Employee employee : employees) {
-            if (employee.getAge() >= age) {
-                employeeArrayList.add(employee);
-            }
-        }
-        return employeeArrayList;
-    }
-
-    public static boolean checkDeltaAge(ArrayList<Employee> employees, int deltaAge) {
-        int deltaAgeOfEmployees = 0;
-        for (Employee employee : employees) {
-            deltaAgeOfEmployees += employee.getAge();
-        }
-        deltaAgeOfEmployees = deltaAgeOfEmployees / employees.size();
-        return deltaAgeOfEmployees > deltaAge;
-    }
-
-    public static Employee getYoungestEmployee(ArrayList<Employee> employees) {
-        Employee employee = employees.get(0);
-        for (Employee employee1 : employees) {
-            if (employee.getAge() > employee1.getAge()) {
-                employee = employee1;
-            }
-        }
-        return employee;
-    }
 }
 
 //    Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
