@@ -3,6 +3,10 @@ package ru.braguntsov.java.basic.homeworks.homework7;
 public class Horse implements Transport {
     private int endurance;
 
+    public Horse(int endurance) {
+        this.endurance = endurance;
+    }
+
     @Override
     public boolean move(Terrain terrain, int distance) {
         if (terrain.equals(Terrain.SWAMP)) {
