@@ -1,13 +1,17 @@
 package ru.braguntsov.java.basic.homeworks.homework10;
 
+
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
-        phoneBook
+        ArrayList<String> numbers = new ArrayList<>();
+        numbers.add("12345678");
+        numbers.add("12345690");
+        numbers.add("12345689");
+        phoneBook.add("Egor", numbers);
+        System.out.println(phoneBook);
+        System.out.println(phoneBook.containsPhoneNumber("12345689"));
     }
 }
-//Реализуйте класс PhoneBook, который хранит в себе список имен (фио) и телефонных номеров;
-//Метод add() должен позволять добавлять запись имя-телефон;
-//Метод find() выполнять поиск номер(-а, -ов) телефона по имени;
-//Под одним именем может быть несколько телефонов (в случае однофамильцев, или наличии у одного человека нескольких номеров), тогда при запросе такой фамилии должны выводиться все телефоны;
-//Метод containsPhoneNumber должен проверять наличие телефона в справочнике.
