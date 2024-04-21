@@ -1,25 +1,20 @@
 package ru.braguntsov.java.basic.homeworks.homework11;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 
 public class PersonDataBase {
-    private List<Person> personList;
-    public PersonDataBase(List<Person> personList) {
+    private final Map<Long, Person> personList;
+
+    public PersonDataBase(Map<Long, Person> personList) {
         this.personList = personList;
     }
 
     public Person findById(Long id) {
-        for (Person person : personList) {
-            if (Objects.equals(id, person.getId())) {
-                return person;
-            }
-        }
-        return null;
+        return personList.get(id);
     }
 
     public void add(Person person) {
-        personList.add(person);
+        personList.put(person.getId(), person);
     }
 
     public boolean isManager(Person person) {
