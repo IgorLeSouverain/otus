@@ -25,9 +25,7 @@ public class PersonDataBase {
     }
 
     public boolean isEmployee(Long id) {
-        return !findById(id).getPosition().equals(Position.MANAGER) ||
-                !findById(id).getPosition().equals(Position.MANAGER) ||
-                !findById(id).getPosition().equals(Position.MANAGER) ||
-                !findById(id).getPosition().equals(Position.MANAGER);
+        Person person = findById(id);
+        return !isManager(person);
     }
 }
