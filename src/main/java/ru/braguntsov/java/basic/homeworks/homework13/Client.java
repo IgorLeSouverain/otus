@@ -10,7 +10,7 @@ public class Client {
         while (true) {
             try (Socket socket = new Socket("localhost", 8080)) {
                 ExampleClient client = new ExampleClient(socket.getInputStream(), socket.getOutputStream());
-                System.out.println("Available math operation are: -, +, /, * \n Type two numbers and one math operand to calculate the result");
+                client.read();
                 String userMessage = scanner.nextLine();
                 if (userMessage.equals("exit")) {
                     break;

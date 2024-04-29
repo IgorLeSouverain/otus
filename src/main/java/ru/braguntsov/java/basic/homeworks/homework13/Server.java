@@ -5,20 +5,15 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Server {
-//    private static final List<ClientHandler> clientHandlerList =  new ArrayList<>();
     public static void main(String[] args) throws IOException {
         ServerSocket socket = new ServerSocket(8080);
         while (true) {
             Socket clientSocket = socket.accept();
             DataInputStream inputStream = new DataInputStream(clientSocket.getInputStream());
             DataOutputStream outputStream = new DataOutputStream(clientSocket.getOutputStream());
-//            ClientHandler clientHandler = new ClientHandler(clientSocket, inputStream, outputStream);
-//            clientHandlerList.add(clientHandler);
+            outputStream.writeUTF("Available math operation are: -, +, /, * \n Type two numbers and one math operand to calculate the result");
             String userInput = inputStream.readUTF();
             String result = transform(userInput);
             outputStream.writeUTF(result);

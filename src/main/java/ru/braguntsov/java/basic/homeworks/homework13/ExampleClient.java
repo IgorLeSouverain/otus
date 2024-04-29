@@ -19,6 +19,11 @@ public class ExampleClient implements AutoCloseable {
         System.out.println(result);
     }
 
+    public void read() throws IOException {
+        String result = dataInputStream.readUTF();
+        System.out.println(result);
+    }
+
     @Override
     public void close() throws Exception {
         dataInputStream.close();
